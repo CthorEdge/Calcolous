@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<?import javafx.scene.control.Label?>
+<BorderPane fx:controller="com.calcoulus.CalcoulusController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <AnchorPane prefHeight="400.0" prefWidth="240.0" style="-fx-background-color: #F8E3C9;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="207.0" fitWidth="204.0" layoutX="18.0" layoutY="76.0" nodeOrientation="INHERIT" pickOnBounds="true">
+               <image>
+                  <Image url="@../../Image Source/32.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="45.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="3.0" text="Calorie Counter Solution">
+               <font>
+                  <Font name="Arial Bold Italic" size="13.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.2613636354605357" startY="0.2992424097928134">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="1.0" green="0.7490516901016235" blue="0.18000000715255737" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.007680491551459294">
+                           <color>
+                              <Color red="1.0" green="0.7490516901016235" blue="0.18000000715255737" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.9938556067588326">
+                           <color>
+                              <Color red="0.9599999785423279" green="0.4560000002384186" blue="0.09600000083446503" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.9599999785423279" green="0.4560000002384186" blue="0.09600000083446503" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill></Text>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="400.0" prefWidth="360.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="usernameEntryLogin" layoutX="98.0" layoutY="166.0" prefHeight="28.0" prefWidth="165.0" promptText="Username" style="-fx-background-color: transparent; -fx-border-color: #E1E2E3; -fx-border-width: 1px 1px 1px 1px; -fx-border-radius: 5px 5px 5px 5px;" />
+            <Text layoutX="98.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Text>
+            <PasswordField fx:id="passwordEntryLogin" layoutX="98.0" layoutY="219.0" prefHeight="27.0" prefWidth="166.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #E1E2E3; -fx-border-width: 1px 1px 1px 1px; -fx-border-radius: 5px 5px 5px 5px;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></PasswordField>
+            <Text layoutX="98.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Text>
+            <Text fontSmoothingType="LCD" layoutX="98.0" layoutY="86.0" stroke="BLACK" strokeType="INSIDE" text="Welcome Back," wrappingWidth="152.10076904296875">
+               <font>
+                  <Font name="Ebrima" size="20.0" />
+               </font></Text>
+            <Text fill="#9c9c9c" layoutX="98.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign in to continue" wrappingWidth="152.10076904296875" />
+            <Button  fx:id="loginButton" onAction="#loginButtonClick" layoutX="99.0" layoutY="270.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="164.0" style="-fx-background-color: #FF8527; -fx-border-radius: 5px 5px 5px 5px;" text="LOGIN" textFill="WHITE">
+               <font>
+                  <Font name="Ebrima Bold" size="12.0" />
+               </font>
+            </Button>
+            <Text layoutX="96.0" layoutY="332.0" opacity="0.63" strokeType="OUTSIDE" strokeWidth="0.0" text="Not registered yet?">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Text>
+            <Text fill="#ff8527" layoutX="184.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create an Account">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Text>
+            <Label fx:id="LoginMessageLabel" layoutX="148.0" layoutY="255.0" text="Login failed!" textFill="RED" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
