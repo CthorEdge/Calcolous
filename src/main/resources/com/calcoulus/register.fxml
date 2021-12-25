@@ -11,33 +11,33 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:controller="com.calcoulus.RegisterController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <left>
       <AnchorPane prefHeight="400.0" prefWidth="360.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="3.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="C:\Users\Acer\Downloads\oop project\shapes\kotak.png" />
+<!--                  <Image url="C:\Users\Acer\Downloads\oop project\shapes\kotak.png" />-->
                </image>
             </ImageView>
             <ImageView fitHeight="339.0" fitWidth="284.0" layoutX="40.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="C:\Users\Acer\Downloads\oop project\frame2.png" />
+<!--                  <Image url="C:\Users\Acer\Downloads\oop project\frame2.png" />-->
                </image>
             </ImageView>
-            <TextField layoutX="98.0" layoutY="89.0" prefHeight="28.0" prefWidth="165.0" promptText="Username" style="-fx-background-color: transparent; -fx-border-color: #E1E2E3; -fx-border-width: 1px 1px 1px 1px; -fx-border-radius: 5px 5px 5px 5px;" />
+            <TextField fx:id="usernameEntryRegister" layoutX="98.0" layoutY="89.0" prefHeight="28.0" prefWidth="165.0" promptText="Username" style="-fx-background-color: transparent; -fx-border-color: #E1E2E3; -fx-border-width: 1px 1px 1px 1px; -fx-border-radius: 5px 5px 5px 5px;" />
             <Text layoutX="98.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
                <font>
                   <Font size="10.0" />
                </font>
             </Text>
-            <TextField layoutX="98.0" layoutY="141.0" prefHeight="28.0" prefWidth="165.0" promptText="Email" style="-fx-background-color: transparent; -fx-border-color: #E1E2E3; -fx-border-width: 1px 1px 1px 1px; -fx-border-radius: 5px 5px 5px 5px;" />
-            <Text layoutX="98.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+            <TextField fx:id="weightEntryRegister" layoutX="98.0" layoutY="141.0" prefHeight="28.0" prefWidth="165.0" promptText="Weight" style="-fx-background-color: transparent; -fx-border-color: #E1E2E3; -fx-border-width: 1px 1px 1px 1px; -fx-border-radius: 5px 5px 5px 5px;" />
+            <Text layoutX="98.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight">
                <font>
                   <Font size="10.0" />
                </font>
             </Text>
-            <PasswordField layoutX="97.0" layoutY="193.0" prefHeight="27.0" prefWidth="166.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #E1E2E3; -fx-border-width: 1px 1px 1px 1px; -fx-border-radius: 5px 5px 5px 5px;">
+            <PasswordField fx:id="passwordEntryRegister" layoutX="97.0" layoutY="193.0" prefHeight="27.0" prefWidth="166.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #E1E2E3; -fx-border-width: 1px 1px 1px 1px; -fx-border-radius: 5px 5px 5px 5px;">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -47,7 +47,7 @@
                   <Font size="10.0" />
                </font>
             </Text>
-            <PasswordField layoutX="97.0" layoutY="246.0" prefHeight="27.0" prefWidth="166.0" promptText="Confirm Password" style="-fx-background-color: transparent; -fx-border-color: #E1E2E3; -fx-border-width: 1px 1px 1px 1px; -fx-border-radius: 5px 5px 5px 5px;">
+            <PasswordField fx:id="passwordConfirmEntryRegister" layoutX="97.0" layoutY="246.0" prefHeight="27.0" prefWidth="166.0" promptText="Confirm Password" style="-fx-background-color: transparent; -fx-border-color: #E1E2E3; -fx-border-width: 1px 1px 1px 1px; -fx-border-radius: 5px 5px 5px 5px;">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -57,7 +57,7 @@
                   <Font size="10.0" />
                </font>
             </Text>
-            <Button layoutX="99.0" layoutY="298.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="164.0" style="-fx-background-color: #FF8527; -fx-border-radius: 5px 5px 5px 5px;" text="REGISTER" textFill="WHITE">
+            <Button fx:id="registerButton" onAction="#registerButtonClick" layoutX="99.0" layoutY="298.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="164.0" style="-fx-background-color: #FF8527; -fx-border-radius: 5px 5px 5px 5px;" text="REGISTER" textFill="WHITE">
                <font>
                   <Font name="Ebrima Bold" size="12.0" />
                </font>
@@ -70,12 +70,12 @@
          <children>
             <ImageView fitHeight="442.0" fitWidth="243.0" layoutY="-22.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="C:\Users\Acer\Downloads\oop project\sayur.png" />
+<!--                  <Image url="C:\Users\Acer\Downloads\oop project\sayur.png" />-->
                </image>
             </ImageView>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-61.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" rotate="-37.4">
                <image>
-                  <Image url="C:\Users\Acer\Downloads\oop project\c.png" />
+<!--                  <Image url="C:\Users\Acer\Downloads\oop project\c.png" />-->
                </image>
             </ImageView>
          </children></AnchorPane>

@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Text?>
 
 <?import javafx.scene.control.Label?>
-<BorderPane fx:controller="com.calcoulus.CalcoulusController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:controller="com.calcoulus.LoginController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <left>
       <AnchorPane prefHeight="400.0" prefWidth="240.0" style="-fx-background-color: #F8E3C9;" BorderPane.alignment="CENTER">
          <children>
@@ -90,7 +90,8 @@
                   <Font size="10.0" />
                </font>
             </Text>
-            <Text fill="#ff8527" layoutX="184.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create an Account">
+            <Text fx:id="RegisterPageLink"  fill="#ff8527" layoutX="184.0"
+                  layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create an Account">
                <font>
                   <Font size="10.0" />
                </font>
