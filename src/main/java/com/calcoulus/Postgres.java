@@ -93,7 +93,7 @@ public class Postgres {
         String loggedUsername;
         String password;
         int weight;
-        double calorieGot;
+        int calorieGot;
         try {
             PreparedStatement st = connection.prepareStatement(sql);
             st.setString(1, username);
@@ -102,7 +102,7 @@ public class Postgres {
                 loggedUsername = rs.getString("username");
                 password = rs.getString("password");
                 weight = rs.getInt("weight");
-                calorieGot = rs.getDouble("calorie_got");
+                calorieGot = rs.getInt("calorie_got");
 
                 return new Account(loggedUsername, password, weight, calorieGot);
             }
@@ -111,6 +111,21 @@ public class Postgres {
             System.out.println("Connection Failed on reloadRegisteredAccount!");
         }
         return null;
+    }
+    public void updateAccountWeight (int weightInput, String username){
+        String sql = "UPDATE account SET weight = ? WHERE username = ?";
+        try {
+            PreparedStatement st = connection.prepareStatement(sql);
+            st.setInt(1, weightInput);
+            st.setString(2, username);
+            int row = st.executeUpdate();
+            if (row > 0){
+                System.out.println("Account Update Successful!");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Connection Failed on updateAccountWeight!");
+        }
     }
 
 }

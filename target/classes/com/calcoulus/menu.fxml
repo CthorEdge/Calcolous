@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.ImageView?>
@@ -11,8 +10,9 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Label?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:controller="com.calcoulus.MainController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <AnchorPane prefHeight="346.0" prefWidth="600.0" style="-fx-background-color: ffffff;" BorderPane.alignment="CENTER">
          <children>
@@ -46,8 +46,8 @@
                   <Font size="10.0" />
                </font>
             </Text>
-            <TextField id="weight_input" alignment="CENTER_RIGHT" layoutX="464.0" layoutY="212.0" prefHeight="32.0" prefWidth="71.0" promptText="(gr)" style="-fx-background-color: #ffffff; -fx-border-color: FC5404; -fx-border-radius: 2px 2px 2px 2px; -fx-border-width: 0.5px 0.5px 0.5px 0.5px;" />
-            <ChoiceBox id="food_choise" layoutX="339.0" layoutY="212.0" prefHeight="32.0" prefWidth="106.0" style="-fx-background-color: #ffffff; -fx-border-color: FC5404; -fx-border-radius: 3px 3px 3px 3px; -fx-border-width: 0.5px 0.5px 0.5px 0.5px;">
+            <TextField fx:id="grams" alignment="CENTER_RIGHT" layoutX="464.0" layoutY="212.0" prefHeight="32.0" prefWidth="71.0" promptText="(gr)" style="-fx-background-color: #ffffff; -fx-border-color: FC5404; -fx-border-radius: 2px 2px 2px 2px; -fx-border-width: 0.5px 0.5px 0.5px 0.5px;" />
+            <TextField fx:id="food_name" layoutX="339.0" layoutY="212.0" prefHeight="32.0" prefWidth="106.0" style="-fx-background-color: #ffffff; -fx-border-color: FC5404; -fx-border-radius: 3px 3px 3px 3px; -fx-border-width: 0.5px 0.5px 0.5px 0.5px;">
                <effect>
                   <DropShadow height="5.0" offsetY="1.0" radius="2.0" width="5.0">
                      <color>
@@ -55,8 +55,8 @@
                      </color>
                   </DropShadow>
                </effect>
-            </ChoiceBox>
-            <Button id="add_btn" layoutX="339.0" layoutY="255.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="56.0" style="-fx-border-radius: 3px 3px 3px 3px; -fx-background-color: #00315D;" text="ADD" textFill="WHITE">
+            </TextField>
+            <Button onAction="#addButtonClick" layoutX="339.0" layoutY="255.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="56.0" style="-fx-border-radius: 3px 3px 3px 3px; -fx-background-color: #00315D;" text="ADD" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="8.0" />
                </font>
@@ -68,7 +68,7 @@
                   </DropShadow>
                </effect>
             </Button>
-            <ImageView id="reset_btn" fitHeight="62.0" fitWidth="29.0" layoutX="511.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="reset_img" fitHeight="62.0" fitWidth="29.0" layoutX="511.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
                <image>
 <!--                  <Image url="C:\Users\Acer\Downloads\oop project\img\reset.png" />-->
                </image>
@@ -80,7 +80,7 @@
                   </DropShadow>
                </effect>
             </ImageView>
-            <Button id="update_btn" layoutX="123.0" layoutY="270.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="77.0" style="-fx-border-radius: 3px 3px 3px 3px; -fx-background-color: #00315D;" text="UPDATE" textFill="WHITE">
+            <Button fx:id="update_btn" onAction="#updateButtonClick" layoutX="123.0" layoutY="270.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="77.0" style="-fx-border-radius: 3px 3px 3px 3px; -fx-background-color: #00315D;" text="UPDATE" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="8.0" />
                </font>
@@ -102,11 +102,11 @@
 <!--                  <Image url="C:\Users\Acer\Downloads\oop project\img\weight.png" />-->
                </image>
             </ImageView>
-            <TextField fx:id="tfUsernameMain" alignment="TOP_RIGHT" layoutX="87.0" layoutY="198.0" style="-fx-border-color: E1E2E3;">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-            </TextField>
+             <Text fx:id="textUsernameMain" layoutX="121.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thoriq TEDx">
+                 <font>
+                     <Font name="System Bold" size="12.0" />
+                 </font>
+             </Text>
             <ImageView fitHeight="36.0" fitWidth="21.0" layoutX="94.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
                <image>
 <!--                  <Image url="C:\Users\Acer\Downloads\oop project\img\User_fill.png" />-->
@@ -132,12 +132,24 @@
                   <Font name="Arial" size="24.0" />
                </font>
             </Text>
-            <Text id="calorie_needs" layoutX="423.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1024">
+             <Button id="reset_btn" layoutX="510.0" layoutY="281.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="30.0" style="-fx-border-radius: 3px 3px 3px 3px; -fx-background-color: #00315D;" text="R" textFill="WHITE" visible="false">
+                 <font>
+                     <Font name="System Bold" size="8.0" />
+                 </font>
+                 <effect>
+                     <DropShadow height="5.0" offsetY="1.0" radius="2.0" width="5.0">
+                         <color>
+                             <Color opacity="0.4289383888244629" />
+                         </color>
+                     </DropShadow>
+                 </effect>
+             </Button>
+            <Text fx:id="calorie_needs" layoutX="423.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0">
                <font>
                   <Font name="Arial Bold" size="24.0" />
                </font>
             </Text>
-            <Text id="calorie_consume" fill="#fc5404" layoutX="350.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1024">
+            <Text fx:id="calorie_consume" fill="#fc5404" layoutX="350.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0">
                <font>
                   <Font name="Arial Bold" size="24.0" />
                </font>
@@ -148,7 +160,7 @@
    <bottom>
       <AnchorPane prefHeight="54.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView id="logout_btn" fitHeight="33.0" fitWidth="93.0" layoutX="487.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="logout_img" fitHeight="33.0" fitWidth="93.0" layoutX="487.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                <image>
 <!--                  <Image url="C:\Users\Acer\Downloads\oop project\img\logout.png" />-->
                </image>
