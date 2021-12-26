@@ -1,64 +1,66 @@
 package com.calcoulus;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class RegisterController {
     Account registeredAccount;
-    Stage stage;
 
-    @FXML
-    private Label registerMessageLabel;
+//    @FXML
+//    private Label registerMessageLabel;
     @FXML
     private TextField usernameEntryRegister;
     @FXML
     private TextField weightEntryRegister;
     @FXML
     private PasswordField passwordEntryRegister;
-
-    public void getPrevStage(Stage stage) {
-        this.stage = stage;
-    }
+    @FXML
+    private PasswordField passwordConfirmEntryRegister;
 
     @FXML
-    protected void registerButtonClick() throws IOException {
-        registeredAccount = LoginController.auth.setRegister
-                (
-                        usernameEntryRegister.getText(),
-                        passwordEntryRegister.getText(),
-                        Integer.parseInt(weightEntryRegister.getText()),
-                        LoginController.database
-                );
+    protected void registerButtonClick(ActionEvent event) throws IOException {
+        if (passwordConfirmEntryRegister.getText().equals(passwordEntryRegister.getText())){
 
-        if (registeredAccount!=null){
-
-            LoginController.database.insertRegisteredAccount
+            registeredAccount = LoginController.auth.setRegister
                     (
                             usernameEntryRegister.getText(),
                             passwordEntryRegister.getText(),
-                            Integer.parseInt(weightEntryRegister.getText())
+                            Integer.parseInt(weightEntryRegister.getText()),
+                            LoginController.database
                     );
 
-            registerMessageLabel.setText("Register Successful!");
+            if (registeredAccount!=null){
 
-            // This code is used to change page into Login Page
-            FXMLLoader fxmlLoader = new FXMLLoader(CalcoulusApp.class.getResource("login.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-            stage.setTitle("CALCOULUS");
-            stage.setScene(scene);
-            stage.show();
+                LoginController.database.insertRegisteredAccount
+                        (
+                                usernameEntryRegister.getText(),
+                                passwordEntryRegister.getText(),
+                                Integer.parseInt(weightEntryRegister.getText())
+                        );
 
-        }
-        else {
-            registerMessageLabel.setText("Register Failed!");
+//            registerMessageLabel.setText("Register Successful!");
+
+                // This code is used to change page into Login Page
+                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("login.fxml")));
+                Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+
+            }
+            else {
+//            registerMessageLabel.setText("Register Failed!");
+            }
         }
     }
-
 }
