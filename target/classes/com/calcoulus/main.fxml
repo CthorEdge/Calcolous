@@ -11,23 +11,24 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.image.Image?>
 <BorderPane fx:controller="com.calcoulus.MainController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
     <center>
         <AnchorPane prefHeight="346.0" prefWidth="600.0" style="-fx-background-color: ffffff;" BorderPane.alignment="CENTER">
             <children>
-                <ImageView id="background" fitHeight="374.0" fitWidth="617.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="bg" fitHeight="374.0" fitWidth="617.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-<!--                        <Image url="C:\Users\Acer\Downloads\oop project\img\bg.png" />-->
+                        <Image url="@..\...\Image Source\bg.png" />
                     </image>
                 </ImageView>
-                <ImageView id="frame_user" fitHeight="270.0" fitWidth="270.0" layoutX="27.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="user" fitHeight="270.0" fitWidth="270.0" layoutX="27.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-<!--                        <Image url="C:\Users\Acer\Downloads\oop project\img\user.png" />-->
+                        <Image url="@..\...\Image Source\user.png" />
                     </image>
                 </ImageView>
-                <ImageView id="frame_calorie" fitHeight="270.0" fitWidth="270.0" layoutX="303.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView  fx:id="diaryCalory" fitHeight="270.0" fitWidth="270.0" layoutX="303.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-<!--                        <Image url="C:\Users\Acer\Downloads\oop project\img\Diary Calorie.png" />-->
+                        <Image url="@..\...\Image Source\Diary Calorie.png" />
                     </image>
                 </ImageView>
                 <Text layoutX="384.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Calories for today :">
@@ -58,18 +59,6 @@
                         </DropShadow>
                     </effect>
                 </Button>
-                <ImageView id="reset_img" fitHeight="62.0" fitWidth="29.0" layoutX="511.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-<!--                        <Image url="C:\Users\Acer\Downloads\oop project\img\reset.png" />-->
-                    </image>
-                    <effect>
-                        <DropShadow height="5.0" offsetY="1.0" radius="2.0" width="5.0">
-                            <color>
-                                <Color opacity="0.5419520735740662" />
-                            </color>
-                        </DropShadow>
-                    </effect>
-                </ImageView>
                 <Button onAction="#updateButtonClick" layoutX="122.0" layoutY="269.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="77.0" style="-fx-border-radius: 3px 3px 3px 3px; -fx-background-color: #00315D;" text="UPDATE" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="8.0" />
@@ -87,19 +76,19 @@
                         <Insets />
                     </opaqueInsets>
                 </TextField>
-                <ImageView fitHeight="16.0" fitWidth="20.0" layoutX="95.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="weight" fitHeight="16.0" fitWidth="20.0" layoutX="95.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-<!--                        <Image url="C:\Users\Acer\Downloads\oop project\img\weight.png" />-->
+                        <Image url="@..\...\Image Source\weight.png" />
                     </image>
                 </ImageView>
-                <ImageView fitHeight="36.0" fitWidth="21.0" layoutX="94.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="User_fill" fitHeight="36.0" fitWidth="21.0" layoutX="94.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-<!--                        <Image url="C:\Users\Acer\Downloads\oop project\img\User_fill.png" />-->
+                        <Image url="@..\...\Image Source\User_fill.png" />
                     </image>
                 </ImageView>
-                <ImageView id="user_profile" fitHeight="99.0" fitWidth="78.0" layoutX="122.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView  fx:id="Profile" fitHeight="99.0" fitWidth="78.0" layoutX="122.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-<!--                        <Image url="C:\Users\Acer\Downloads\oop project\img\Profile.png" />-->
+                        <Image url="@..\...\Image Source\Profile.png" />
                     </image>
                 </ImageView>
                 <Text layoutX="473.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="calories">
@@ -146,14 +135,14 @@
     <bottom>
         <AnchorPane prefHeight="54.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
             <children>
-                <ImageView id="logout_img" fitHeight="33.0" fitWidth="93.0" layoutX="487.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="logout" fitHeight="33.0" fitWidth="93.0" layoutX="487.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-<!--                        <Image url="C:\Users\Acer\Downloads\oop project\img\logout.png" />-->
+                        <Image url="@..\...\Image Source\logout.png" />
                     </image>
                 </ImageView>
-                <ImageView id="calcoulus" fitHeight="58.0" fitWidth="177.0" layoutX="-4.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="limasatu" fitHeight="58.0" fitWidth="177.0" layoutX="-4.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-<!--                        <Image url="C:\Users\Acer\Downloads\oop project\img\51.png" />-->
+                        <Image url="@..\...\Image Source\51.png" />
                     </image>
                 </ImageView>
                 <Button onAction="#logoutButtonClick" layoutX="489.0" layoutY="12.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="77.0" style="-fx-border-radius: 3px 3px 3px 3px; -fx-background-color: #00315D;" text="RESET" textFill="WHITE">

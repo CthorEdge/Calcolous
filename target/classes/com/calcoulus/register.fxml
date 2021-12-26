@@ -11,20 +11,29 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.paint.Color?>
 <BorderPane fx:controller="com.calcoulus.RegisterController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <left>
       <AnchorPane prefHeight="400.0" prefWidth="360.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="3.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-<!--                  <Image url="C:\Users\Acer\Downloads\oop project\shapes\kotak.png" />-->
-               </image>
-            </ImageView>
-            <ImageView fitHeight="339.0" fitWidth="284.0" layoutX="40.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-<!--                  <Image url="C:\Users\Acer\Downloads\oop project\frame2.png" />-->
-               </image>
-            </ImageView>
+             <ImageView fx:id="enam" fitHeight="351.0" fitWidth="150.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+                 <image>
+                     <Image url="@..\...\Image Source\6.png" />
+                 </image>
+             </ImageView>
+             <ImageView fx:id="frame2" fitHeight="339.0" fitWidth="284.0" layoutX="40.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+                 <image>
+                     <Image url="@..\...\ImageSource\frame2.png" />
+                 </image>
+                 <effect>
+                     <DropShadow height="10.0" offsetY="-1.0" radius="4.5" width="10.0">
+                         <color>
+                             <Color opacity="0.16866439580917358" />
+                         </color>
+                     </DropShadow>
+                 </effect>
+             </ImageView>
             <TextField fx:id="usernameEntryRegister" layoutX="98.0" layoutY="89.0" prefHeight="28.0" prefWidth="165.0" promptText="Username" style="-fx-background-color: transparent; -fx-border-color: #E1E2E3; -fx-border-width: 1px 1px 1px 1px; -fx-border-radius: 5px 5px 5px 5px;" />
             <Text layoutX="98.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
                <font>
@@ -68,14 +77,14 @@
    <right>
       <AnchorPane prefHeight="200.0" prefWidth="240.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="442.0" fitWidth="243.0" layoutY="-22.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="sayur" fitHeight="442.0" fitWidth="243.0" layoutY="-22.0" pickOnBounds="true" preserveRatio="true">
                <image>
-<!--                  <Image url="C:\Users\Acer\Downloads\oop project\sayur.png" />-->
+                  <Image url="@..\...\Image Source\sayur.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-61.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" rotate="-37.4">
+            <ImageView fx:id="c" fitHeight="150.0" fitWidth="200.0" layoutX="-61.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" rotate="-37.4">
                <image>
-<!--                  <Image url="C:\Users\Acer\Downloads\oop project\c.png" />-->
+                  <Image url="@..\...\Image Source\c.png" />
                </image>
             </ImageView>
          </children></AnchorPane>

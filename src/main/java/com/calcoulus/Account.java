@@ -44,7 +44,7 @@ public class Account {
     }
     public void setNewCalorieGot (String foodName, int grams, ArrayList<Food> foodDB){
         if (thereIsFood(foodName, foodDB)){
-            this.calorieGot += (getCaloriePerGr(foodName, foodDB)*grams);
+            this.calorieGot = this.calorieGot + (getCaloriePerGr(foodName, foodDB))*grams;
         }
     }
     public void setCalorieGot (int calorieGot){
@@ -59,13 +59,13 @@ public class Account {
         }
         return false;
     }
-    public double getCaloriePerGr (String foodName, ArrayList<Food> foodDB){
+    public int getCaloriePerGr (String foodName, ArrayList<Food> foodDB){
         for (Food food : foodDB){
             if (food.getFoodName().equals(foodName)){
-                return food.getCaloriePerHundredGr()/100;
+                return (int) (food.getCaloriePerHundredGr())/100;
             }
         }
-        return 0.0;
+        return 0;
     }
 
 }

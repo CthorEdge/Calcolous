@@ -15,13 +15,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.image.Image?>
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.calcoulus.LoginController">
     <left>
         <AnchorPane prefHeight="400.0" prefWidth="240.0" style="-fx-background-color: ffffff;" BorderPane.alignment="CENTER">
             <children>
-                <ImageView fitHeight="207.0" fitWidth="204.0" layoutX="18.0" layoutY="76.0" nodeOrientation="INHERIT" pickOnBounds="true">
+                <ImageView fx:id="loginLogo"  fitHeight="207.0" fitWidth="204.0" layoutX="18.0" layoutY="76.0" nodeOrientation="INHERIT" pickOnBounds="true">
                     <image>
-<!--                        <Image url="D:\Calcoulus\src\main\resources\com\calcoulus\Image\32.png" />-->
+                        <Image url="@..\...\Image Source\32.png" />
                     </image>
                 </ImageView>
                 <Text layoutX="45.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="3.0" text="Calorie Counter Solution">
@@ -100,14 +101,14 @@
                     <font>
                         <Font size="8.0" />
                     </font></Label>
-                <ImageView id="background_1" fitHeight="211.0" fitWidth="118.0" layoutX="248.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView  fx:id="bg1Login" fitHeight="211.0" fitWidth="118.0" layoutX="248.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-<!--                        <Image url="C:\Users\Acer\Downloads\oop project\garbage\3.3.png" />-->
+                        <Image url="@..\...\Image Source\3.3.png" />
                     </image>
                 </ImageView>
-                <ImageView id="background_2" fitHeight="118.0" fitWidth="40.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="bg2Login" fitHeight="118.0" fitWidth="40.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-<!--                        <Image url="C:\Users\Acer\Downloads\oop project\garbage\5.png" />-->
+                        <Image url="@..\...\Image Source\5.png" />
                     </image>
                 </ImageView>
             </children>
