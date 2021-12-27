@@ -50,6 +50,8 @@ public class MainController {
     private ImageView weight;
     @FXML
     private ImageView User_fill;
+    @FXML
+    private ImageView round;
 
     @FXML
     protected void initialize(){
@@ -82,6 +84,9 @@ public class MainController {
         File file8 = new File("Image Source/User_fill.png");
         Image image8 = new Image(file8.toURI().toString());
         User_fill.setImage(image8);
+        File file9 = new File("Image Source/refresh.png");
+        Image image9 = new Image(file9.toURI().toString());
+        User_fill.setImage(image9);
     }
 
     @FXML
